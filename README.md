@@ -6,3 +6,10 @@ If you reveal your salary range or expectations first, you are at a disadvantage
 
 This tool lets both parties put in their salary ranges.
 
+## Requirements
+
+postgres
+
+ruby 2.6
+
+
