@@ -21,6 +21,8 @@ jobs:
           POSTGRES_DB: salaryoverlap_test
 
     working_directory: ~/repo
+    environment: 
+      DATABASE_URL: "postgres://default_user@localhost:5432/db_name"
 
     steps:
       - checkout
@@ -44,11 +46,7 @@ jobs:
 
       # Database setup
       - run: bundle exec rake db:create
-        environment: 
-          DATABASE_URL: "postgres://default_user@localhost:5432/db_name"
       - run: bundle exec rake db:schema:load
-        environment: 
-          DATABASE_URL: "postgres://default_user@localhost:5432/db_name"
 
       # run tests!
       - run:
