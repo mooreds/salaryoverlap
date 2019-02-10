@@ -1,0 +1,2 @@
+class AddSalaryDatum < ApplicationRecord
+end

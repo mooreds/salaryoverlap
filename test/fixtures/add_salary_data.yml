@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  linkguid: MyString
+  low: 1
+  high: 1
+  is_employer: false
+
+two:
+  email: MyString
+  linkguid: MyString
+  low: 1
+  high: 1
+  is_employer: false
