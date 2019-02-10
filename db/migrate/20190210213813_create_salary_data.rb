@@ -1,6 +1,6 @@
-class CreateAddSalaryData < ActiveRecord::Migration[5.2]
+class CreateSalaryData < ActiveRecord::Migration[5.2]
   def change
-    create_table :add_salary_data do |t|
+    create_table :salary_data do |t|
       t.string :email
       t.string :linkguid
       t.integer :low

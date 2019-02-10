@@ -1,2 +1,0 @@
-class AddSalaryDatum < ApplicationRecord
-end
