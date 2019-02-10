@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SalaryDataControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @salary_datum = salary_data(:one)
+    @salary_datum = create :salary_datum
   end
 
   test "should get index" do
