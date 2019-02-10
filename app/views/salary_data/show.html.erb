@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @salary_datum.email %>
+</p>
+
+<p>
+  <strong>Linkguid:</strong>
+  <%= @salary_datum.linkguid %>
+</p>
+
+<p>
+  <strong>Low:</strong>
+  <%= @salary_datum.low %>
+</p>
+
+<p>
+  <strong>High:</strong>
+  <%= @salary_datum.high %>
+</p>
+
+<p>
+  <strong>Is employer:</strong>
+  <%= @salary_datum.is_employer %>
+</p>
+
+<%= link_to 'Edit', edit_salary_datum_path(@salary_datum) %> |
+<%= link_to 'Back', salary_data_path %>

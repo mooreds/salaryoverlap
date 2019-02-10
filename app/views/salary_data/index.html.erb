@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Salary Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Linkguid</th>
+      <th>Low</th>
+      <th>High</th>
+      <th>Is employer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salary_data.each do |salary_datum| %>
+      <tr>
+        <td><%= salary_datum.email %></td>
+        <td><%= salary_datum.linkguid %></td>
+        <td><%= salary_datum.low %></td>
+        <td><%= salary_datum.high %></td>
+        <td><%= salary_datum.is_employer %></td>
+        <td><%= link_to 'Show', salary_datum %></td>
+        <td><%= link_to 'Edit', edit_salary_datum_path(salary_datum) %></td>
+        <td><%= link_to 'Destroy', salary_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Salary Datum', new_salary_datum_path %>
