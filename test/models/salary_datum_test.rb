@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class SalaryDatumTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "default salary datum valid" do
+    assert true, build(:salary_datum).valid?
+  end
 end

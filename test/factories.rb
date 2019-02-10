@@ -3,8 +3,7 @@ FactoryBot.define do
     email { "MyString" }
     linkguid { "MyString" }
     low { 1 }
-    high { 1 }
+    high { 2 }
     is_employer { false }
   end
-
 end
