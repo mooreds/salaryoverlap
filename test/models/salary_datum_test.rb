@@ -16,21 +16,21 @@ require 'test_helper'
 
 class SalaryDatumTest < ActiveSupport::TestCase
   test "default datum valid" do
-    assert true, build(:salary_datum).valid?
+    assert build(:salary_datum).valid?
   end
   test "invalid with high lower than low" do
-    assert false, build(:salary_datum, high: 1, low: 2).valid?
+    assert !build(:salary_datum, high: 1, low: 2).valid?
   end
   test "invalid with nil email" do
-    assert false, build(:salary_datum, email: nil).valid?
+    assert !build(:salary_datum, email: nil).valid?
   end
   test "invalid with nil linkguid" do
-    assert false, build(:salary_datum, linkguid: nil).valid?
+    assert !build(:salary_datum, linkguid: nil).valid?
   end
   test "is_employer values" do
-    assert false, build(:salary_datum, is_employer: nil).valid?
-    assert false, build(:salary_datum, is_employer: 'abc').valid?
-    assert true, build(:salary_datum, is_employer: true).valid?
-    assert true, build(:salary_datum, is_employer: false).valid?
+    assert !build(:salary_datum, is_employer: nil).valid?
+    assert build(:salary_datum, is_employer: 'abc').valid?
+    assert build(:salary_datum, is_employer: true).valid?
+    assert build(:salary_datum, is_employer: false).valid?
   end
 end

@@ -13,4 +13,10 @@
 #
 
 class SalaryDatum < ApplicationRecord
+  validates :email, presence: true
+  validates :linkguid, presence: true
+  validates :is_employer, inclusion: { in: [true, false] }
+  validates :low, numericality: { less_than: ->(salary_datum) { salary_datum.high } }, unless: Proc.new {|sd| sd.low.nil? || sd.high.nil? }
+  validates :high, numericality: { greater_than: ->(salary_datum) { salary_datum.low } }, unless: Proc.new {|sd| sd.low.nil? || sd.high.nil? }
+
 end
