@@ -8,5 +8,6 @@ FactoryBot.define do
     low { 1 }
     high { 2 }
     is_employer { false }
+    salary_overlap
   end
 end
