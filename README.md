@@ -8,8 +8,11 @@ This tool lets both parties put in their salary ranges.
 
 ## Requirements
 
-postgres
+postgres 9+
 
 ruby 2.6
 
 
+## Testing
+
+`bundle exec rake test` 
