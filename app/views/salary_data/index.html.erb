@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Email</th>
-      <th>Linkguid</th>
       <th>Low</th>
       <th>High</th>
       <th>Is employer</th>
@@ -18,7 +17,6 @@
     <% @salary_data.each do |salary_datum| %>
       <tr>
         <td><%= salary_datum.email %></td>
-        <td><%= salary_datum.linkguid %></td>
         <td><%= salary_datum.low %></td>
         <td><%= salary_datum.high %></td>
         <td><%= salary_datum.is_employer %></td>
