@@ -10,20 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_030058) do
+ActiveRecord::Schema.define(version: 2019_02_11_033514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "salary_data", force: :cascade do |t|
     t.string "email", null: false
-    t.string "linkguid", null: false
     t.integer "low", null: false
     t.integer "high", null: false
     t.boolean "is_employer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["linkguid"], name: "index_salary_data_on_linkguid", unique: true
   end
 
+  create_table "salary_overlaps", force: :cascade do |t|
+    t.string "linkguid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "employer_salary_datum_id"
+    t.bigint "employee_salary_datum_id"
+    t.index ["employee_salary_datum_id"], name: "index_salary_overlaps_on_employee_salary_datum_id"
+    t.index ["employer_salary_datum_id"], name: "index_salary_overlaps_on_employer_salary_datum_id"
+    t.index ["linkguid"], name: "index_salary_overlaps_on_linkguid", unique: true
+  end
+
+  add_foreign_key "salary_overlaps", "salary_data", column: "employee_salary_datum_id"
+  add_foreign_key "salary_overlaps", "salary_data", column: "employer_salary_datum_id"
 end

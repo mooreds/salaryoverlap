@@ -69,6 +69,6 @@ class SalaryDataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def salary_datum_params
-      params.require(:salary_datum).permit(:email, :linkguid, :low, :high, :is_employer)
+      params.require(:salary_datum).permit(:email, :low, :high, :is_employer)
     end
 end

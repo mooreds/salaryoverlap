@@ -17,7 +17,7 @@ class SalaryDataControllerTest < ActionDispatch::IntegrationTest
 
   test "should create salary_datum" do
     assert_difference('SalaryDatum.count') do
-      post salary_data_url, params: { salary_datum: { email: @salary_datum.email, high: @salary_datum.high, is_employer: @salary_datum.is_employer, linkguid: @salary_datum.linkguid, low: @salary_datum.low } }
+      post salary_data_url, params: { salary_datum: { email: @salary_datum.email, high: @salary_datum.high, is_employer: @salary_datum.is_employer, low: @salary_datum.low } }
     end
 
     assert_redirected_to salary_datum_url(SalaryDatum.last)
@@ -34,7 +34,7 @@ class SalaryDataControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update salary_datum" do
-    patch salary_datum_url(@salary_datum), params: { salary_datum: { email: @salary_datum.email, high: @salary_datum.high, is_employer: @salary_datum.is_employer, linkguid: @salary_datum.linkguid, low: @salary_datum.low } }
+    patch salary_datum_url(@salary_datum), params: { salary_datum: { email: @salary_datum.email, high: @salary_datum.high, is_employer: @salary_datum.is_employer, low: @salary_datum.low } }
     assert_redirected_to salary_datum_url(@salary_datum)
   end
 
