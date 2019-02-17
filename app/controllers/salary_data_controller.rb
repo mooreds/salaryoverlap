@@ -25,7 +25,6 @@ class SalaryDataController < ApplicationController
   # POST /salary_data.json
   def create
     @salary_datum = SalaryDatum.new(salary_datum_params)
-
     respond_to do |format|
       if @salary_datum.save
         format.html { redirect_to @salary_datum, notice: 'Salary datum was successfully created.' }
@@ -69,6 +68,6 @@ class SalaryDataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def salary_datum_params
-      params.require(:salary_datum).permit(:email, :low, :high, :is_employer)
+      params.require(:salary_datum).permit(:email, :low, :high, :is_employer, :salary_overlap_id)
     end
 end

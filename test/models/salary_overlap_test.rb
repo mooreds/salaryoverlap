@@ -42,6 +42,7 @@ class SalaryOverlapTest < ActiveSupport::TestCase
     so.salary_data << build(:salary_datum)
     so.salary_data << build(:salary_datum)
     so.salary_data << build(:salary_datum)
+    #byebug
     assert !so.valid?
   end
 end

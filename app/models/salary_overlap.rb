@@ -16,6 +16,14 @@ class SalaryOverlap < ApplicationRecord
   before_save :set_linkguid
   has_many :salary_data
 
+  validate :has_at_most_two_ranges
+
+  def has_at_most_two_ranges
+    if salary_data.size > 2
+      errors.add(:base, "No more than two ranges allowed.")
+    end
+  end
+
   private
   def set_linkguid
     self.linkguid = SecureRandom.uuid

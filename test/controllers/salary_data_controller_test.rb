@@ -23,6 +23,15 @@ class SalaryDataControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to salary_datum_url(SalaryDatum.last)
   end
 
+  test "should create salary_datum associated with existing overlap" do
+    assert_difference('SalaryDatum.count') do
+      post salary_data_url, params: { salary_datum: { email: "anotheremail", high: @salary_datum.high+10, is_employer: !@salary_datum.is_employer, low: @salary_datum.low+ 4, salary_overlap_id: @salary_datum.salary_overlap_id } }
+    end
+    @salary_datum.salary_overlap.reload
+    assert @salary_datum.salary_overlap.salary_data.size == 2
+    assert_redirected_to salary_datum_url(SalaryDatum.last)
+  end
+
   test "should show salary_datum" do
     get salary_datum_url(@salary_datum)
     assert_response :success
