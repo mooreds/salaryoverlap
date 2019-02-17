@@ -10,20 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_030058) do
+ActiveRecord::Schema.define(version: 2019_02_11_035418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "salary_data", force: :cascade do |t|
     t.string "email", null: false
-    t.string "linkguid", null: false
     t.integer "low", null: false
     t.integer "high", null: false
     t.boolean "is_employer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["linkguid"], name: "index_salary_data_on_linkguid", unique: true
+    t.bigint "salary_overlap_id"
+    t.index ["salary_overlap_id"], name: "index_salary_data_on_salary_overlap_id"
+  end
+
+  create_table "salary_overlaps", force: :cascade do |t|
+    t.string "linkguid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["linkguid"], name: "index_salary_overlaps_on_linkguid", unique: true
   end
 
 end

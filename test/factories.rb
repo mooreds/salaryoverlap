@@ -1,9 +1,13 @@
 FactoryBot.define do
+  factory :salary_overlap do
+    linkguid { "MyString" }
+  end
+
   factory :salary_datum do
     email { "MyString" }
-    linkguid { "MyString" }
     low { 1 }
     high { 2 }
     is_employer { false }
+    salary_overlap
   end
 end

@@ -13,6 +13,10 @@ postgres 9+
 ruby 2.6
 
 
+## Running
+
+`bundle exec rails s -b 0.0.0.0` 
+
 ## Testing
 
 `bundle exec rake test` 
