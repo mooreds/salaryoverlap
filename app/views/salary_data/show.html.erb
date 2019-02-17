@@ -20,5 +20,4 @@
   <%= @salary_datum.is_employer %>
 </p>
 
-<%= link_to 'Edit', edit_salary_datum_path(@salary_datum) %> |
-<%= link_to 'Back', salary_data_path %>
+Link to share: /<%= @salary_datum.salary_overlap.linkguid %>
