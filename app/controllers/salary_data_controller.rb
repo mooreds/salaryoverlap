@@ -1,11 +1,6 @@
 class SalaryDataController < ApplicationController
-  before_action :set_salary_datum, only: [:show, :edit, :update, :destroy]
+  before_action :set_salary_datum, only: [:show]
 
-  # GET /salary_data
-  # GET /salary_data.json
-  def index
-    @salary_data = SalaryDatum.all
-  end
 
   # GET /salary_data/1
   # GET /salary_data/1.json
@@ -17,8 +12,8 @@ class SalaryDataController < ApplicationController
     @salary_datum = SalaryDatum.new
   end
 
-  # GET /salary_data/1/edit
-  def edit
+  # GET /salary_data/link
+  def link
   end
 
   # POST /salary_data
@@ -33,30 +28,6 @@ class SalaryDataController < ApplicationController
         format.html { render :new }
         format.json { render json: @salary_datum.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /salary_data/1
-  # PATCH/PUT /salary_data/1.json
-  def update
-    respond_to do |format|
-      if @salary_datum.update(salary_datum_params)
-        format.html { redirect_to @salary_datum, notice: 'Salary datum was successfully updated.' }
-        format.json { render :show, status: :ok, location: @salary_datum }
-      else
-        format.html { render :edit }
-        format.json { render json: @salary_datum.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /salary_data/1
-  # DELETE /salary_data/1.json
-  def destroy
-    @salary_datum.destroy
-    respond_to do |format|
-      format.html { redirect_to salary_data_url, notice: 'Salary datum was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
