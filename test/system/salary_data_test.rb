@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class SalaryDataTest < ApplicationSystemTestCase
   setup do
-    @salary_datum = salary_data(:one)
+    @salary_datum = create :salary_datum
   end
 
   test "visiting the index" do
@@ -16,8 +16,7 @@ class SalaryDataTest < ApplicationSystemTestCase
 
     fill_in "Email", with: @salary_datum.email
     fill_in "High", with: @salary_datum.high
-    fill_in "Is employer", with: @salary_datum.is_employer
-    fill_in "Linkguid", with: @salary_datum.linkguid
+    find(:label, for: 'salary_datum_is_employer').click
     fill_in "Low", with: @salary_datum.low
     click_on "Create Salary datum"
 
@@ -31,8 +30,7 @@ class SalaryDataTest < ApplicationSystemTestCase
 
     fill_in "Email", with: @salary_datum.email
     fill_in "High", with: @salary_datum.high
-    fill_in "Is employer", with: @salary_datum.is_employer
-    fill_in "Linkguid", with: @salary_datum.linkguid
+    find(:label, for: 'salary_datum_is_employer').click
     fill_in "Low", with: @salary_datum.low
     click_on "Update Salary datum"
 
