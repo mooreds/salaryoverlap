@@ -52,3 +52,7 @@ jobs:
           name: Run tests
           command: |
             bundle exec rake test
+      - run:
+          name: Run system tests
+          command: |
+            bundle exec rake test:system
